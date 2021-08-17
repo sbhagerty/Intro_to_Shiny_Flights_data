@@ -23,21 +23,25 @@ ui <- fluidPage(
                         min = 1,
                         max = 50,
                         value = 30),
-            checkboxGroupInput("checkGroup", label = h3("Select a number"), 
+            
+            checkboxGroupInput("checkGroup", label = h3("Checkbox group"), 
                                choices = list("Choice 1" = 1, "Choice 2" = 2, "Choice 3" = 3),
                                selected = 1)
         ),
 
         # Show a plot of the generated distribution
         mainPanel(
-           plotOutput("distPlot")
+           plotOutput("distPlot"),
+           textOutput("text")
         )
     )
 )
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {
-
+    output$text <- renderText({
+        paste(input$checkGroup)
+    })
     output$distPlot <- renderPlot({
         # generate bins based on input$bins from ui.R
         x    <- faithful[, 2]

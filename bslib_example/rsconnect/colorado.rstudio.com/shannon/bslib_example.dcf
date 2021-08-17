@@ -1,0 +1,13 @@
+name: bslib_example
+title: bslib_example
+username: shannon
+account: shannon
+server: colorado.rstudio.com
+hostUrl: https://colorado.rstudio.com/rsc/__api__
+appId: 9055
+bundleId: 44997
+url: https://colorado.rstudio.com/rsc/shannons_flight_app/
+when: 1619654140.76947
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: bs_theme_preview.R|material.R|shannons_theme.R

@@ -9,17 +9,11 @@ library(DT)
 
 
 ui <- fluidPage(
-    titlePanel('My Flight Data App'),
-    sidebarLayout(
-        
-        sidebarPanel(
             selectInput("carrier", "Carrier", choices = unique(flights$carrier)),
-            selectInput("origin", "Origin", choices = unique(flights$origin)) ),
-        mainPanel(
+            selectInput("origin", "Origin", choices = unique(flights$origin)),
             plotOutput("plot"), 
-            DTOutput('table')))
-    
-)
+            DTOutput('table'))
+
 
 server <- function(input, output){
     
